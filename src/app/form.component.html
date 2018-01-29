@@ -1,0 +1,22 @@
+
+ <form #f="ngForm" (ngSubmit)="sendNotification(f.value)">
+<div class="form-group">  
+      <label for="textMessage">TEXT MESSAGE</label>
+      <input type="text"  
+             name="textMessage" 
+              ngModel required #textMessage="ngModel">  
+    </div>
+    
+    <div class="form-group">  
+      <label for="phoneNumber">PHONE NUMBER</label>
+      <input type="number"  
+             name="phoneNumber" ngModel required #phoneNumber="ngModel">  
+    </div>
+  <button type="submit" class="btn btn-primary" >Submit</button>
+</form>
+<!-- <p>textMessage name value: {{ textMessage.value }}</p>
+<p>phonenumber name value: {{ phoneNumber.value }}</p> -->
+ 
+
+
+
