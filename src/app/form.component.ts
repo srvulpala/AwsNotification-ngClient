@@ -14,7 +14,7 @@ export class AppFormComponent {
   
     sendNotification(f: NgForm): void {
     this.sendNotificationService.sendNotification(f.textMessage,f.phoneNumber)
-      .then(response => console.log(response)) {        
+      .then(response => console.log(response) {        
       });
   }
   
