@@ -11,8 +11,8 @@ export class SendNotificationService {
 
 
   public sendNotification(notification): Promise<Todo> {
-   // header.append('Access-Control-Allow-Origin', '*');
-    return this.http.post('http://localhost:8080/greeting', notification)
+
+    return this.http.post('http://localhost:8080/springbootawssns/greeting', notification)
     .toPromise().then(response => response.json())
       .catch(this.handleError);
   }
