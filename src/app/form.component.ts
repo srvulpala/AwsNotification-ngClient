@@ -9,13 +9,17 @@ import { Notification } from './notification';
  
 })
 export class AppFormComponent {
+  private status:string;
   constructor(
     private sendNotificationService: SendNotificationService,
   ) {}
   
     sendNotification(f: NgForm): void {
     this.sendNotificationService.sendNotification(new Notification(f.textMessage,f.phoneNumber,f.accessKey,f.secretKey))
-      .then(response => console.log(response)) {        
+      .then(response => 
+      if(response.result != null)
+      	console.log(response)) {  
+      	this.status = "Message sent successfully!!";      
       };
   }
   

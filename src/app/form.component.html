@@ -1,37 +1,37 @@
 
  <form #f="ngForm" (ngSubmit)="sendNotification(f.value)">
 <div class="form-group">  
-      <label for="textMessage">TEXT MESSAGE</label>
+      <label for="textMessage" style="margin-right:24px">TEXT MESSAGE</label>
       <input type="text"  
              name="textMessage" 
               ngModel required #textMessage="ngModel">  
     </div>
     
     <div class="form-group">  
-      <label for="phoneNumber">PHONE NUMBER</label>
+      <label for="phoneNumber" style="margin-right:20px">PHONE NUMBER</label>
       <input type="text"  
              name="phoneNumber" ngModel required #phoneNumber="ngModel">  
     </div>
     
      <div class="form-group">  
-      <label for="accessKey">ACCESS KEY</label>
+      <label for="accessKey"style="margin-right:42px" >ACCESS KEY</label>
       <input type="text"  
              name="accessKey" ngModel required #accessKey="ngModel">  
     </div>
     
     
         <div class="form-group">  
-      <label for="secretKey">SECRET KEY</label>
+      <label for="secretKey" style="margin-right:42px">SECRET KEY</label>
       <input type="text"  
              name="secretKey" ngModel required #secretKey="ngModel">  
     </div>
-    
+   
     
 
   <button type="submit" class="btn btn-primary" >Submit</button>
 </form>
-<!-- <p>textMessage name value: {{ textMessage.value }}</p>
-<p>phonenumber name value: {{ phoneNumber.value }}</p> -->
+<p style="color:red;font-size:15px">{{ status }}</p>
+
  
 
 
