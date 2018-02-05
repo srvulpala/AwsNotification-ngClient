@@ -1,18 +1,19 @@
 import { Injectable } from '@angular/core';
 import { Headers, Http } from '@angular/http';
 import 'rxjs/add/operator/toPromise';
+import { Notification } from './notification.ts';
 
 @Injectable()
 export class SendNotificationService {
-  private baseUrl = 'http://localhost:8080';
+  private baseUrl = 'http://localhost:8080/greeting';
 
   constructor(private http: Http) { }
 
 
-
-  sendNotification(text,phoneno): Promise<Todo> {
-    return this.http.get("http://jsonplaceholder.typicode.com/posts/1")
-      .toPromise().then(response => response.json())
+  public sendNotification(notification): Promise<Todo> {
+   // header.append('Access-Control-Allow-Origin', '*');
+    return this.http.post('http://localhost:8080/greeting', notification)
+    .toPromise().then(response => response.json())
       .catch(this.handleError);
   }
 
