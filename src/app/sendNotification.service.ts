@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Headers, Http } from '@angular/http';
 import 'rxjs/add/operator/toPromise';
-import { Notification } from './notification.ts';
+import { Notification } from './notification';
 
 @Injectable()
 export class SendNotificationService {
@@ -10,7 +10,7 @@ export class SendNotificationService {
   constructor(private http: Http) { }
 
 
-  public sendNotification(notification): Promise<Todo> {
+  public sendNotification(notification): Promise<Notification> {
 
     return this.http.post('http://localhost:8080/springbootawssns/greeting', notification)
     .toPromise().then(response => response.json())

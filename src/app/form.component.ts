@@ -14,13 +14,21 @@ export class AppFormComponent {
     private sendNotificationService: SendNotificationService,
   ) {}
   
-    sendNotification(f: NgForm): void {
+   sendNotification(f): void {
     this.sendNotificationService.sendNotification(new Notification(f.textMessage,f.phoneNumber,f.accessKey,f.secretKey))
-      .then(response => 
-      if(response.result != null)
-      	console.log(response)) {  
-      	this.status = "Message sent successfully!!";      
-      };
+      .then((response) => { 
+      	console.log(response); 
+      	this.handleSuccess();
+      })
+    
   }
-  
+   
+   
+   private handleSuccess(): void{
+       console.log('Success');
+       this.status = "Message sent successfully!!";   
+     }
+   
+   
+   
 }
