@@ -12,7 +12,7 @@ export class SendNotificationService {
 
   public sendNotification(notification): Promise<Notification> {
 
-    return this.http.post('http://localhost:8080/springbootawssns/greeting', notification)
+    return this.http.post('http://awsnotification-env.us-east-1.elasticbeanstalk.com/springbootawssns/greeting', notification)
     .toPromise().then(response => response.json())
       .catch(this.handleError);
   }
